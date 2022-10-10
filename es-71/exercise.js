@@ -4,7 +4,7 @@ const person = {
   lastName: 'Rossi',
   age: 25,
 };
-let { id, age } = person;
-const json = JSON.stringify({ id, age });
+
+const json = JSON.stringify(({ id, age } = person));
 
 console.log(json); // Should return: { id: 1, age: 25 }
