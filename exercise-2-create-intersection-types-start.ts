@@ -20,7 +20,7 @@ interface CountryLanguages {
 //
 // This should fix the type error on Line 28.
 
-type CountryWithLanguages = Country & CountryLanguages;
+type CountryWithLanguages = (Country & CountryLanguages);
 
 const countryA: CountryWithLanguages = {
     name: "Greece",
@@ -37,7 +37,7 @@ const countryA: CountryWithLanguages = {
 // Add a type annotation with the `CountryWithStatistics` type on
 // the variable `countryB`.
 
-type CountryWithStatistics = Country & CountryStatistics
+type CountryWithStatistics = (Country & CountryStatistics)
 
 const countryB:CountryWithStatistics = {
     name: "China",
