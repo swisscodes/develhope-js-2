@@ -6,22 +6,27 @@
 // Use the array literal type syntax: type[]
 // Hint: Look at the type that TypeScript has inferred.
 
-const currencies1 = ["NZD", "THB", "NGN"];
+type TcurArr = string[]
+
+const currencies1:TcurArr = ["NZD", "THB", "NGN"];
 
 // Add a type annotation for this array.
 // Use the generic interface type `Array`: Array<type>
 
-const currencies2 = ["EUR", "COP", "INR"];
+type TcurArr2<T> =  Array<T>
+const currencies2:TcurArr2<string> = ["EUR", "COP", "INR"];
 
 // Add a type annotation for this array.
 // Use the array literal type syntax: type[]
 
-const populations1 = [50_372_424, 1_352_642_280, 211_400_708];
+type TpopArr = number[] 
+const populations1:TpopArr = [50_372_424, 1_352_642_280, 211_400_708];
 
 // Add a type annotation for this array.
 // Use the generic interface type `Array`: Array<type>
 
-const populations2 = [5_135_300, 331_893_745, 1_412_600_000];
+type TpopArr2<T> = Array<T>
+const populations2:TpopArr2<number> = [5_135_300, 331_893_745, 1_412_600_000];
 
 // ----
 
@@ -30,16 +35,16 @@ const populations2 = [5_135_300, 331_893_745, 1_412_600_000];
 // they are correct.
 
 interface Country {
-    name: never;
+    name: string;
     code: string;
-    population: never;
+    population: number;
 }
 
 // Add a type annotation for this array of objects.
 // Use the array literal type syntax: Type[]
 // Hint: Make use of the `Country` type.
 
-const countries1 = [
+const countries1:Country[] = [
     {
         name: "China",
         code: "CN",
@@ -56,7 +61,7 @@ const countries1 = [
 // Use the generic interface type `Array`: Array<type>
 // Hint: Make use of the `Country` type.
 
-const countries2 = [
+const countries2:Array<Country> = [
     {
         name: "Thailand",
         code: "TH",
